@@ -7,8 +7,8 @@ $(document).ready(function() {
 				alert(errorType)
 			},
 		success: (data) => {
-			console.log("ip: "+data)
+			var obj = data;
 		}
-	
+	div.innerHTML = obj
 	})
 })
