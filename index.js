@@ -6,18 +6,20 @@ const port = process.env.PORT || 4000;
 
 app.use(express.static('app'))
 app.get('/', function(req,res) {
-	var software = req.header('user-agent')
-	var lang = req.header('accept-language')
-
 })
 app.get('/whoami',function(req,res) {
-	console.log('whoami')
 	res.sendFile('index.html',{root: 'app'});
 })
 app.get('/test',function(req,res) {
-	console.log('ajax call')
+	var software = req.header('user-agent')
+	var lang = req.header('accept-language')
 	var ip = req.header('x-forwarded-for')
-	res.send(ip)
+	var obj = {
+		'lang': lang,
+		'ip': ip,
+		'software': software
+	}
+	res.send(obj)
 })
 
 // app.get( '/', function( req, res ) {
