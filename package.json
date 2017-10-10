@@ -1,0 +1,23 @@
+{
+  "name": "header-parser",
+  "version": "1.0.0",
+  "description": "request header parser microservice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebgrebe/header-parser.git"
+  },
+  "author": "sebgrebe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebgrebe/header-parser/issues"
+  },
+  "homepage": "https://github.com/sebgrebe/header-parser#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
