@@ -8,7 +8,7 @@ $(document).ready(function() {
 			},
 		success: (data) => {
 			var obj = data;
-			div.innerHTML = obj
+			div.innerHTML = JSON.stringify(obj)
 		}
 	
 	})
