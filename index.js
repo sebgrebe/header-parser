@@ -1,14 +1,14 @@
 var express = require('express')
 var app = express()
-var ip = 'hello';
 
 const port = process.env.PORT || 4000;
 
 app.use(express.static('app'))
 app.get('/', function(req,res) {
+	res.sendFile('index.html',{root: 'app'});
 })
 app.get('/whoami',function(req,res) {
-	res.sendFile('index.html',{root: 'app'});
+	res.sendFile('reply.html',{root: 'app'});
 })
 app.get('/test',function(req,res) {
 	var software = req.header('user-agent')
@@ -21,9 +21,5 @@ app.get('/test',function(req,res) {
 	}
 	res.send(obj)
 })
-
-// app.get( '/', function( req, res ) {
-//     res.sendFile('index.html',{root: 'app'});
-//   });
 
 app.listen(port); 
