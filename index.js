@@ -3,6 +3,8 @@ var app = express()
 
 const port = process.env.PORT || 4000;
 
+console.log('App running on Port 4000')
+
 app.use(express.static('app'))
 app.get('/', function(req,res) {
 	res.sendFile('index.html',{root: 'app'});
