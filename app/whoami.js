@@ -29,7 +29,6 @@ $(document).ready(function() {
 			var lang_prop = data['lang']
 			var lang = lang_prop.substr(0,lang_prop.indexOf(','))
 			var software = collectSoftware(data['software'])
-
 			var ip = data['ip']
 			var obj = {
 				'ipaddress': ip,
