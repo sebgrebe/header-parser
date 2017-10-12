@@ -18,22 +18,25 @@ $(document).ready(function() {
 		return software
 	}
 	$.ajax({
-		url: '/test',
+		url: '/test?format=json-pretty',
 		type: 'GET',
+		dataType: 'json',
 		error: (xhr,errorType) => {
 				alert(errorType)
 			},
 		success: (data) => {
+			console.log(data)
 			var lang_prop = data['lang']
 			var lang = lang_prop.substr(0,lang_prop.indexOf(','))
-			var software = collectSoftware(String(data['software']))
+			var software = collectSoftware(data['software'])
+
 			var ip = data['ip']
 			var obj = {
 				'ipaddress': ip,
 				'language': lang,
 				'software': software,
 			}
-			div.innerHTML = JSON.stringify(obj)
+			div.innerHTML = JSON.stringify(obj,null,4)
 		}
 	
 	})

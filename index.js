@@ -20,8 +20,8 @@ app.get('/test',function(req,res) {
 		'lang': lang,
 		'ip': ip,
 		'software': software
-	}
-	res.send(obj)
+		}
+	res.json(obj)
 })
 
 app.listen(port); 
