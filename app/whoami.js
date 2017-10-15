@@ -18,24 +18,29 @@ $(document).ready(function() {
 		return software
 	}
 	$.ajax({
-		url: '/test?format=json-pretty',
+		url: '/test',
 		type: 'GET',
 		dataType: 'json',
 		error: (xhr,errorType) => {
 				alert(errorType)
 			},
 		success: (data) => {
-			console.log(data)
-			var lang_prop = data['lang']
-			var lang = lang_prop.substr(0,lang_prop.indexOf(','))
-			var software = collectSoftware(data['software'])
-			var ip = data['ip']
-			var obj = {
-				'ipaddress': ip,
-				'language': lang,
-				'software': software,
-			}
-			div.innerHTML = JSON.stringify(obj,null,4)
+// 			var data = {
+//     "ip": "109.147.71.88",
+//     "lang": "de-DE",
+//     "software": "Macintosh; Intel Mac OS X 10_11_5(sdasd)"
+// }
+// 			var lang_prop = data['lang']
+// 			var lang = lang_prop.substr(0,lang_prop.indexOf(','))
+// 			var software = collectSoftware(data['software'])
+// 			var ip = data['ip']
+// 			var obj = {
+// 				ipaddress: ip,
+// 				language: lang,
+// 				software: software,
+// 			}
+
+// 			div.innerHTML = JSON.stringify(obj,null,4)
 		}
 	
 	})
